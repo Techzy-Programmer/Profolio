@@ -1,0 +1,119 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+::selection { background: #0000005c }
+
+body {
+    width: 100vw;
+    display: flex;
+    color: #fff;
+    min-height: 100dvh;
+    align-items: center;
+    justify-content: center;
+    background: url('./assets/bg-pic.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+}
+
+.glass {
+    margin: 20px 0;
+    min-height: 340px;
+    padding: 10px 5px;
+    border-radius: 20px;
+    backdrop-filter: blur(20px);
+    border: 2px solid #4ddbff21;
+    width: clamp(280px, 96vw, 480px);
+    box-shadow: -8px -8px 16px 0px #00000066;
+    background: linear-gradient(135deg, #300e4b9c, #0000008f);
+}
+
+.glass b {
+    color: #d9fffc;
+}
+
+.flex-bx {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.profile > img.pic {
+    animation: picHang 0.8s cubic-bezier(0.46, 0.03, 0.52, 0.96) 0s infinite alternate;
+    box-shadow: 0px -10px 20px 0px #213141a3;
+    border-radius: 60px;
+    pointer-events: none;
+    user-select: none;
+    height: 120px;
+}
+
+@keyframes picHang {
+    0% { transform: rotate(5deg) scale(0.8) }
+    100% { transform: rotate(-5deg) scale(1) }
+}
+
+.profile > div.pitch {
+    margin: 5px 0;
+    padding: 2px 4px;
+    line-height: 1.4;
+    color: #eefffe;
+    word-spacing: 2px;
+    font-family: math;
+    letter-spacing: 0.5px;
+    font-size: clamp(14px, 3vw, 18px);
+}
+
+.handles {
+    margin-top: 10px;
+}
+
+.handles > div.desc {
+    font-family: monospace;
+    letter-spacing: 1.5px;
+    word-spacing: 4px;
+    color: #cdcdcd;
+    font-size: 12px;
+}
+
+.handles > ul {
+    width: 100%;
+    list-style: none;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.handles > ul > li > div {
+    letter-spacing: 1.4px;
+    text-align: center;
+    margin: 5px 10px;
+    cursor: pointer;
+    font-size: 13px;
+}
+
+.handles > ul > li > div img {
+    transform: rotate(0deg) scale(1);
+    transition: transform 0.2s ease;
+    pointer-events: none;
+    user-select: none;
+}
+
+.handles > ul > li > div:hover img { transform: rotate(10deg) scale(1.12) }
+
+.handles > ul > li > div b {
+    color: #8cc4ff;
+    text-decoration: underline;
+    transition: all 0.2s ease-in-out;
+    will-change: text-underline-offset;
+    text-decoration-thickness: 1.2px;
+    text-underline-offset: 1.2px;
+}
+
+.handles > ul > li > div:hover b {
+    text-underline-offset: 5px;
+    color: #8afbff;
+}
